@@ -1,6 +1,4 @@
 extjs-dag-drawer
 ================
 
-ExtJS component for drawing trees (actually Directed Acyclic Graphs)
-
-test
+-ExtJS component for drawing trees (actually Directed Acyclic Graphs)-
