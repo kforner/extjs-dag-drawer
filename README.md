@@ -2,8 +2,8 @@ extjs-dag-drawer
 ================
 ExtJS component (extjs >= 4.1) for drawing trees (actually Directed Acyclic Graphs).
 
-This component uised the **Draw** package to layout and draw *Direct Acyclic Graphs*, i.e. oriented graphs without cycles.
-It can be used for instance to draw dependency graphs, rganizational charts ...
+This component uses the **Draw** package to layout and draw *Direct Acyclic Graphs*, i.e. oriented graphs without cycles.
+It can be used for instance to draw dependency graphs, organizational charts ...
 
 ## Credits: Algorithm for drawing the graph
 
@@ -25,3 +25,5 @@ may distribute non-source (e.g., minimized or compacted) forms of
 that code without the copy of the GNU GPL normally required by
 section 4, provided you include this license notice and a URL
 through which recipients can access the Corresponding Source.
+
+See [License](COPYING)
