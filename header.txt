@@ -1,4 +1,5 @@
-/*Copyright 2012 Leo Forner, Karl Forner
+/*
+Copyright 2012 Leo Forner, Karl Forner
 
 The JavaScript code in this page is free software: you can
 redistribute it and/or modify it under the terms of the GNU
