@@ -1,11 +1,11 @@
 
 Ext.create('Ext.panel.Panel', {
-    width: 650,
-    height: 400,
-    title: 'Resizable Panel',
-    x: 10,
-    y: 10,
-    
+	width: 650,
+	height: 400,
+	title: 'Resizable Panel',
+	x: 10,
+	y: 10,
+	
 	items: [{
 			xtype: 'dagdrawer',
 			settings: dag_settings,
@@ -17,28 +17,28 @@ Ext.create('Ext.panel.Panel', {
 			dag: dag2, 
 			computeLayout: maxUpOrDownLayerLayout,
 	}],
-
+	
 	layout: {
-        type: 'hbox',
-        align: 'stretch'
-    },
-    resizable: {
-        constrain: true,
-        constrainTo: Ext.getBody(),
-        dynamic: true,
-        pinned: true,
-        handles: 'all'
-    },
-    renderTo: Ext.getBody()
+	    type: 'hbox',
+	    align: 'stretch'
+	},
+	resizable: {
+	    constrain: true,
+	    constrainTo: Ext.getBody(),
+	    dynamic: true,
+	    pinned: true,
+	    handles: 'all'
+	},
+	renderTo: Ext.getBody()
 });
 
 Ext.create('Ext.panel.Panel', {
 	width: 400,
-    height: 450,
-    title: 'Scrollable Panel',
-    x: 710,
-    y: 10,
-    
+	height: 450,
+	title: 'Scrollable Panel',
+	x: 710,
+	y: 10,
+	
 	items: [{
 			xtype: 'dagdrawer',
 			settings: dag_settings,
@@ -52,12 +52,12 @@ Ext.create('Ext.panel.Panel', {
 			computeLayout: maxUpOrDownLayerLayout,
 			autoSize: false,
 	}],
-
+	
 	layout: {
-        type: 'hbox',
-        align: 'stretch'
-    },
-    autoScroll: true,
-    floating: true,
-    renderTo: Ext.getBody()
+	    type: 'hbox',
+	    align: 'stretch'
+	},
+	autoScroll: true,
+	floating: true,
+	renderTo: Ext.getBody()
 });

@@ -17,8 +17,8 @@ var nodes2 = {
 		'2':{'label': 'Many things'},
 		'3':{'label': 'On\n many\n many\n many\n lines'},
 		'4':{'label': 'Or'},
-		'5':{'label': 'Make a very very very very long line '},
-		'6':{'label': 'It is made for !'} 
+		'5':{'label': 'Make a very very very very long line'},
+		'6':{'label': 'It is made for !', 'highlighted': 1} 
 };
 var edges2 = [ [1,3],[2,3],[2,4],[3,5],[5,6] ];
 var dag2 = {'nodes':nodes2, 'edges':edges2};

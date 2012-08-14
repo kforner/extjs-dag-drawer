@@ -14,20 +14,20 @@ Ext.define('DagDrawer', {
     autoSize: true,	
     
     settings: {
-    	margin: 50,	
-	    layerSpacing: 50,
+    	margin: 50,		// margin around the DAG  	
+	    layerSpacing: 50,		// space between layers (vertically)
 	    nodes: {
-	        spacing: 20,
+	        spacing: 20,		// space between nodes (horizontally)
 	        label: {
-	            marginWidth: 5,
+	            marginWidth: 5,		// margin between text and rectangle 
 	            marginHeight: 0,
-	            'font-size': '12px',
+	            'font-size': '12px',		
 	            'font-family': 'Arial,Helvetica,sans-serif',
 	            'font-weight': 'bold',
 	        },
 	        rect: {
-	        	width: 60,
-		        height: 40,
+	        	width: 60,		// minimum width (resized if the text is bigger)
+		        height: 40,		// minimum height
 		        fill: 'white',
 		        radius: 5,
 		        'fill-opacity': 0,
@@ -48,11 +48,11 @@ Ext.define('DagDrawer', {
 	    },
 	    edges: {
 	        color: 'red',
-	        arrow_height: 6,
+	        arrow_height: 6,		// size of head of the arrows
 	    },
 	    interaction: {
-	    	radius: 5,
-	    	cursor: 'pointer',
+	    	radius: 5,		// size of the node when your mouse is over
+	    	cursor: 'pointer',		// type of cursor when your mouse is over
 	    	onMouseOver: function(label, rect, mask, settings) {
 	    		var t = settings.interaction.radius;
 	    		

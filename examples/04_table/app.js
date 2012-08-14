@@ -1,7 +1,7 @@
 
 Ext.create('Ext.panel.Panel', {
 	title : 'Table of Directed Acyclic Graphs',
- 	x: 0,
+	x: 0,
 	y: 0,
 	
 	items : [ {
@@ -29,19 +29,18 @@ Ext.create('Ext.panel.Panel', {
 		computeLayout : topDownLayerLayout,
 		height: 400,
 	}],
-	
+
+	autoScroll : true,
 	layout : {
 		type : 'table',
 		columns : 2
 	},
-   	resizable: {
-        constrain: true,
-        constrainTo: Ext.getBody(),
-        dynamic: true,
-        pinned: true,
-        handles: 'all'
-    },
-	floating: true,
-	autoScroll : true,
+	resizable: {
+	    constrain: true,
+	    constrainTo: Ext.getBody(),
+	    dynamic: true,
+	    pinned: true,
+	    handles: 'all'
+	},
 	renderTo : Ext.getBody()
 });
