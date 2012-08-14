@@ -6,6 +6,8 @@ var dag_settings = {
                 'font-size': '16px',
                 'font-family': 'Arial,Helvetica,sans-serif',
                 'font-weight': 'normal',
+                'font-style': 'italic',
+                fill: 'blue',
 	        },
 	        rect: {
 	        	radius: 50,
@@ -13,7 +15,7 @@ var dag_settings = {
 	    },
 	    highlightedNodes: {
 	    	label: {
-                fill: 'red',
+	    		'font-weight': 'bold',
 	        },
 	        rect: {
 	            fill: 'blue',

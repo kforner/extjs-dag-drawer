@@ -3,7 +3,7 @@ var dag_settings = {
 		
 		nodes: {
 	        label: {
-	            marginWidth: 5,
+	            marginWidth: 10,
 	            marginHeight: 5,
 	        },
 	        rect: {

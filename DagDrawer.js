@@ -11,28 +11,28 @@ Ext.define('DagDrawer', {
     extend: 'Ext.draw.Component',
     xtype: 'dagdrawer',
     
-    autoSize: true,
+    autoSize: true,	
     
     settings: {
-    	margin: 50,
+    	margin: 50,	
 	    layerSpacing: 50,
 	    nodes: {
 	        spacing: 20,
 	        label: {
 	            marginWidth: 5,
 	            marginHeight: 0,
-                'font-size': '12px',
-                'font-family': 'Arial,Helvetica,sans-serif',
+	            'font-size': '12px',
+	            'font-family': 'Arial,Helvetica,sans-serif',
 	            'font-weight': 'bold',
 	        },
 	        rect: {
 	        	width: 60,
 		        height: 40,
-	            fill: 'white',
+		        fill: 'white',
 		        radius: 5,
-	            'fill-opacity': 0,
-	            stroke: 'blue',
-	            'stroke-width': 2,
+		        'fill-opacity': 0,
+		        stroke: 'blue',
+		        'stroke-width': 2,
 	        },
 	    },
 	    highlightedNodes: {
@@ -68,10 +68,10 @@ Ext.define('DagDrawer', {
 	    	onMouseOut: function(label, rect, mask, settings) {
 	    		rect.animate({
 	    			to: {
-	    	            x : rect.x,
-	    	            y : rect.y,
-	    	            width : rect.width,
-	    	            height : rect.height,
+	    				x : rect.x,
+	    				y : rect.y,
+	    				width : rect.width,
+	    				height : rect.height,
 	    			}
 	    	    });
 	    	},
@@ -176,8 +176,8 @@ DagDrawer.prototype.center = function() {
 	this.backgroundSprite.setAttributes({
 		x: -this.settings.margin,
 		y: -this.settings.margin,
-    	width: box.width + 2*settings.margin,
-    	height: box.height + 2*settings.margin,
+		width: box.width + 2*settings.margin,
+		height: box.height + 2*settings.margin,
 	}, true);
 	
 	if(this.viewBox && this.autoSize){
@@ -380,10 +380,8 @@ DagDrawer.prototype.buildNodeShapes = function(surface, nodes, settings) {
  */
 DagDrawer.prototype.buildNode = function(surface, node, x, settings) {
 	var nodSettings;
-	if (!node.highlighted) 
-		nodSettings = settings.nodes;
-	else
-		nodSettings = settings.highlightedNodes;	
+	if (!node.highlighted) nodSettings = settings.nodes;
+	else nodSettings = settings.highlightedNodes;	
 
 	var rectWidth = nodSettings.rect.width;
 	var rectHeight = nodSettings.rect.height;
@@ -413,8 +411,6 @@ DagDrawer.prototype.buildNode = function(surface, node, x, settings) {
 	    	highlighted: node.highlighted,
 	    });
 	     
-	    rect.setAttributes( nodSettings.rect, true );
-	    
 	    var label = surface.add({
 	    	type: 'text',
 	    	x: x,
@@ -423,6 +419,7 @@ DagDrawer.prototype.buildNode = function(surface, node, x, settings) {
 	    	link: node.link
 	    });
 	    
+	    rect.setAttributes( nodSettings.rect, true );
 	    label.setAttributes(nodSettings.label, true);
 	
 	    var labelBB = label.getBBox();
@@ -492,7 +489,7 @@ DagDrawer.prototype.drawDownwardsArrowHead = function(surface, height, color) {
 	var arrow = surface.add({
 		type: 'path',
 		path: 'M'+ -x +','+ h +'L'+ 0 +','+ -1 +'L'+ x +','+ h +'C'+ 0 +','+ h+2 +','+ -x +','+ h +'Z',
-	    stroke : color,
+		stroke : color,
 	   	fill : color
    	});
 		
@@ -532,11 +529,6 @@ DagDrawer.prototype.drawEdge = function(surface, obj1, obj2, line, bg) {
 	var xd = bb2.x + bb2.width / 2;
 	var yd = bb2.y - 1;
 
-	/*
-	 * use the middle as control point var dx = Math.abs(xo - xd); var dy =
-	 * Math.abs(yo - yd);
-	 */
-	
 	var xmid = (xo + xd) / 2;
 	var ymid = (yo + yd) / 2;
 	var color = typeof line == "string" ? line : "#000";
@@ -547,7 +539,6 @@ DagDrawer.prototype.drawEdge = function(surface, obj1, obj2, line, bg) {
 	var arrow = this.drawDownwardsArrowHead(surface, arrowHeight, color);
 	arrow.setAttributes({ translate: { x: xd, y: yd } }, true);
 	
-
 	var set = Ext.create('Ext.draw.CompositeSprite', {
 		surface: surface
 	});
@@ -557,7 +548,8 @@ DagDrawer.prototype.drawEdge = function(surface, obj1, obj2, line, bg) {
 		path: path,
 		stroke : color, 
 		fill : 'none'
-	}).show(true);
+	});
+	
 	set.add(line);
 	set.add(arrow);
 
@@ -568,7 +560,7 @@ DagDrawer.prototype.drawEdge = function(surface, obj1, obj2, line, bg) {
 			stroke : bg.split("|")[0],
 			fill : 'none',
 			'stroke-width' : bg.split("|")[1] || 3
-		}).show(true),
+		}),
 		line : line,
 		shape : set,
 		arrow : arrow,

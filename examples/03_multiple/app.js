@@ -1,24 +1,3 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
- <head>
-        <title>DAGs in other Panels</title>
-        
-    <!-- setup extjs 4.1 -->
-    <link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/try/extjs/4.1.1/resources/css/ext-all.css"/>
-    <script type="text/javascript" src="http://cdn.sencha.io/try/extjs/4.1.1/ext-all.js"></script>
-<!--     <link rel="stylesheet" type="text/css" href="../../../dagger/extjs-4.1.0/resources/css/ext-all.css" /> -->
-<!--     <script type="text/javascript" src="../../../dagger/extjs-4.1.0/ext-all-debug.js"></script> -->
-      
-    <!-- our libs -->
-    <script type="text/javascript" src="../../utils.js"></script>
-    <script type="text/javascript" src="../../daglayout.js"></script>
-    <script type="text/javascript" src="../../DagDrawer.js"></script>
- 
-</head>
-
-<body>
-<script type="text/javascript" src="data.js"></script>
-<script type="text/javascript" src="dag_settings.js"></script>
-<script type="text/javascript" charset="utf-8" id="test">
 
 Ext.create('Ext.panel.Panel', {
     width: 650,
@@ -52,6 +31,7 @@ Ext.create('Ext.panel.Panel', {
     },
     renderTo: Ext.getBody()
 });
+
 Ext.create('Ext.panel.Panel', {
 	width: 400,
     height: 450,
@@ -81,8 +61,3 @@ Ext.create('Ext.panel.Panel', {
     floating: true,
     renderTo: Ext.getBody()
 });
-
-</script>
-
-</body>
-</html>

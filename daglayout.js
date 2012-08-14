@@ -219,12 +219,12 @@ function longestPathLayering(dag) {
  */
 function addDummyNodes(dag, layers) {
     var layer_by_node = {};
-    for(var i=0; i< layers.length; ++i) {
+    for(var i=0; i< layers.length; ++i) 
         layers[i].forEach(function(n) {layer_by_node[n] = i ;} );
-    }
 
-    var new_edges = [];
+    var dagWithDummies = {nodes:dag.nodes, edges: []};
     var new_layers = layers;
+    
     dag.edges.forEach(function(e) {
         var a = e[0], b = e[1];
         var pred = a;
@@ -236,19 +236,17 @@ function addDummyNodes(dag, layers) {
                     label : '',
                     dummy : true
                 };
-                dag.nodes[name] = node;
+                dagWithDummies.nodes[name] = node;
                 new_layers[l].push( name );
 
-                new_edges.push([pred, name]);
+                dagWithDummies.edges.push([pred, name]);
                 pred = name;
             }
-            new_edges.push([pred, b]);
+            dagWithDummies.edges.push([pred, b]);
         } else {
-            new_edges.push(e);
+        	dagWithDummies.edges.push(e);
         }
     });
-    
-    var dagWithDummies = {nodes:dag.nodes, edges:new_edges};
 
     return {dag:dagWithDummies, layers:new_layers};
 }
