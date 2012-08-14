@@ -1,7 +1,7 @@
 How to use extjs-dag-drawer
 ================
 
-This component extends the ExtJS drawComponent, so you can use all its parent properties and methods.
+ - This component extends the ExtJS drawComponent, so you can use all its parent properties and methods.
 
 
 The new configs of DagDrawer are:
