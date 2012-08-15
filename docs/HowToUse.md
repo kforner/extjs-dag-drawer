@@ -47,6 +47,7 @@ Take a look to theses algorithms to know how to make your own one.
 The user settings. It is a hash/object that enables customization.
   	
 Each node is composed by a rectangle and a text, excepted dummy nodes which are circles.
+By the way, a dummy node is an empty node between an edge from an upper node and an edge from a lower node.
 These elements are [ExtJS Sprites](http://docs.sencha.com/ext-js/4-1/#!/api/Ext.draw.Sprite), so you can use all the configs of Sprites.
 Specific configs are explained below.
 
