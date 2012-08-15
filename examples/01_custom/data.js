@@ -10,5 +10,6 @@ var nodes = {
 		'8':{'link':'javascript:alert(\"Link 8\")','label': 'Do it like you want !'} 
 };
 var edges = [ [3,5],[2,7],[4,6],[6,8],[2,4],[5,7],[1,3],[2,8],[1,2],[7,8],[3,4] ];
+
 var dag = {'nodes':nodes, 'edges':edges};
 

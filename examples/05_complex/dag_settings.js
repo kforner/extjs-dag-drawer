@@ -1,4 +1,4 @@
 
 var dag_settings = {
-	layerSpacing: 80,
+		layerSpacing: 80,
 };

@@ -5,20 +5,19 @@ Ext.create("DagDrawer",{
 	computeLayout: maxUpOrDownLayerLayout,
 	
 	width : 500,
-   	height : 600,
+	height : 600,
     
-    draggable: {
-        constrain: true,
-        constrainTo: Ext.getBody()
-    },
-   	resizable: {
-        constrain: true,
-        constrainTo: Ext.getBody(),
-        dynamic: true,
-        pinned: true,
-        handles: 'all'
-    },
-    floating: true,
+	draggable: {
+		constrain: true,
+		constrainTo: Ext.getBody()
+	},
+	resizable: {
+		constrain: true,
+		constrainTo: Ext.getBody(),
+		dynamic: true,
+		pinned: true,
+		handles: 'all'
+	},
  
-    renderTo : Ext.getBody(),
+	renderTo : Ext.getBody(),
 });
