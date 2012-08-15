@@ -1,0 +1,123 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+        <title>Custom DAG</title>
+        
+    <!-- setup extjs 4.1 -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/ext-4.1.0-gpl/resources/css/ext-all.css"/>   
+    <script type="text/javascript" charset="utf-8" src="http://cdn.sencha.io/ext-4.1.0-gpl/ext-all.js"></script>
+      
+    <!-- our libs -->
+    <script type="text/javascript" src="https://raw.github.com/kforner/extjs-dag-drawer/master/utils.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/kforner/extjs-dag-drawer/master/daglayout.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/kforner/extjs-dag-drawer/master/DagDrawer.js"></script>
+ </head>
+
+<body>
+<br><h1>Custom DAG</h1>
+	
+<br>	<p>You can configure each parameter of the graph like below.</p>
+		<p>See data used in <a href="data.js">data.js</a>, configuration applied in <a href="dag_settings.js">dag_settings.js</a>, source in <a href="app.js">app.js</a>.</p>
+	
+<script type="text/javascript" charset="utf-8" id="example">	
+	var nodes = { 
+			'1':{'link':'javascript:alert(\"Link 1\")','label': 'You can custom'},
+			'2':{'link':'javascript:alert(\"Link 2\")','label': 'an ExtJs drawComponent'},
+			'3':{'link':'javascript:alert(\"Link 3\")','label': 'the component like',"highlighted":1},
+			'4':{'link':'javascript:alert(\"Link 4\")','label': 'and every cell'},
+			'5':{'link':'javascript:alert(\"Link 5\")','label': 'and animations'},
+			'6':{'link':'javascript:alert(\"Link 6\")','label': 'in a lot of'},
+			'7':{'link':'javascript:alert(\"Link 7\")','label': 'different ways.'},
+			'8':{'link':'javascript:alert(\"Link 8\")','label': 'Do it like you want !'} 
+	};
+	var edges = [ [3,5],[2,7],[4,6],[6,8],[2,4],[5,7],[1,3],[2,8],[1,2],[7,8],[3,4] ];
+	var dag = {'nodes':nodes, 'edges':edges};
+
+	var dag_settings = {
+		nodes: {
+			label: {
+				marginWidth: 10,
+				marginHeight: 5,
+			},
+			rect: {
+				width: 50,
+				height: 50,
+				stroke: 'green',
+			},
+		},
+		interaction: {
+			onMouseOver: function(label, rect, mask, settings) {
+				var group = Ext.create('Ext.draw.CompositeSprite', {
+					surface: this.surface
+				});
+				group.add(label);
+				group.add(rect);
+				
+				group.animate({
+					to: {
+						rotate: {
+							degrees: 360
+						},
+						scale: {
+							x: 1.2,
+							y: 1.2
+						}
+					}
+				});
+				label.animate({
+					to: {
+						fill: (rect.attr.fill == 'orange') ? 'red' : 'blue'
+					},
+				});
+			},
+			onMouseOut: function(label, rect, mask, settings) {
+				var group = Ext.create('Ext.draw.CompositeSprite', {
+					surface: this.surface
+				});
+				group.add(label);
+				group.add(rect);
+				
+				group.animate({
+					to: {
+						rotate: {
+							degrees: 0
+						},
+						scale: {
+							x: 1,
+							y: 1
+						}
+					}
+				});
+				label.animate({
+					to: {
+						fill: 'black'
+					},
+				});
+			},
+		}    
+	};
+	
+	Ext.create("DagDrawer",{	
+		settings: dag_settings,
+		dag: dag, 
+		computeLayout: maxUpOrDownLayerLayout,
+		
+		width : 500,
+		height : 600,
+		
+		draggable: {
+			constrain: true,
+			constrainTo: Ext.getBody()
+		},
+		resizable: {
+			constrain: true,
+			constrainTo: Ext.getBody(),
+			dynamic: true,
+			pinned: true,
+			handles: 'all'
+		},
+	 
+		renderTo : Ext.getBody(),
+	});
+</script>
+</body>
+</html>
