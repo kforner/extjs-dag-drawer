@@ -6,7 +6,7 @@ var nodes1 = {
 		'4':{"label":" Basic Algorithms"},
 		'5':{"label":"Planarity"},
 		'6':{"label":"Basic Graph Algorithms"},
-		'7':{"label":" Topological Data Structures"},
+		'7':{"label":" Topological Data Structures","highlighted":1},
 		'8':{"label":" Planarity Algorithms"}
 };
 var edges1 = [[3,5],[2,7],[4,6],[6,8],[2,4],[5,7],[1,3],[2,8],[1,2],[7,8],[3,4]];
