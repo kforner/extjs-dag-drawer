@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-        <title>Custom DAG</title>
+        <title>DagDrawer</title>
         
     <!-- setup extjs 4.1 -->
     <link rel="stylesheet" type="text/css" href="http://cdn.sencha.io/ext-4.1.0-gpl/resources/css/ext-all.css"/>   
@@ -13,15 +13,15 @@
  </head>
 
 <body>
-<br><h1>Custom DAG</h1>
+<br><h1>Directed Acyclic Graph Drawer</h1>
 	
-<br>	<p>You can configure each parameter of the graph like below.</p>
-		<p>See data used in <a href="data.js">data.js</a>, configuration applied in <a href="dag_settings.js">dag_settings.js</a>, source in <a href="app.js">app.js</a>.</p>
-	
+<br>	<p>The graph is an <a href="http://docs.sencha.com/ext-js/4-1/#">ExtJS</a> component, it's really easy to handle.</p>
+		<p>Put your data, custom your configs and draw it !</p>
+<br>	
 <script type="text/javascript" charset="utf-8" id="example">	
 	var nodes = { 
 			'1':{'link':'javascript:alert(\"Link 1\")','label': 'You can custom'},
-			'2':{'link':'javascript:alert(\"Link 2\")','label': 'an ExtJs drawComponent'},
+			'2':{'link':'http://docs.sencha.com/ext-js/4-1/#!/api/Ext.draw.Component','label': 'an ExtJs drawComponent'},
 			'3':{'link':'javascript:alert(\"Link 3\")','label': 'the component like',"highlighted":1},
 			'4':{'link':'javascript:alert(\"Link 4\")','label': 'and every cell'},
 			'5':{'link':'javascript:alert(\"Link 5\")','label': 'and animations'},
