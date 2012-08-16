@@ -1,4 +1,11 @@
 /*
+Copyright 2012 Leo Forner, Karl Forner
+
+The JavaScript code in this page is dual licensed under the terms of the GPLv3 license or later
+and the Sencha Model Extension License.
+The Sencha licenses allows this component to be used with both the GPL and Commercial extjs framework licenses. 
+*/
+/*
  *
  * Package: DagLayout
  *
