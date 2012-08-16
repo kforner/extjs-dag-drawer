@@ -9,4 +9,4 @@ It can be used for instance to draw dependency graphs, organizational charts ...
 
 This software is dual licensed with GPLv3 and Sencha License.  
 The Sencha license allows this component to be used with both the GPL and Commercial framework licenses. 
-See [GPL License](GPLv3.txt) and [Sencha License](Sencha_license.txt)
+See [GPL License](blob/master/GPLv3.txt) and [Sencha License](blob/master/Sencha_license.txt)
